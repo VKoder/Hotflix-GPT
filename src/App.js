@@ -1,10 +1,11 @@
+import Body from './components/Body';
 import './index.css';
 
 function App() {
   return (
-    <div className="text-4xl">
-      Namaste React 
-    </div>
+    <>
+    <Body/>
+    </>
   );
 }
 
