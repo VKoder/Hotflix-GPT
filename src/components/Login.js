@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Header from "../components/Header";
-import { checkValidData } from "../utils/validate";
+import { checkValidData, checkValidData2 } from "../utils/validate";
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
@@ -13,8 +13,12 @@ const Login = () => {
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setnotValid(message);
-  };
 
+  };
+  const handleSignUp = () => {
+  const message2 = checkValidData2(name.current.value, email.current.value, password.current.value)
+  setnotValid(message2)
+  }
   const toggleSignInForm = () => {
     setisSignIn(!isSignIn);
   };
@@ -56,12 +60,17 @@ const Login = () => {
             <span className="text-red-700 text-base font-semibold">
               {notValid}
             </span>
-            <button
+           {isSignIn ? <button
               className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
               onClick={handleSignIn}
             >
-              {isSignIn ? "Sign In" : "Sign Up"}
-            </button>
+             Sign In
+            </button> : <button
+              className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
+              onClick={handleSignUp}
+            >
+              Sign Up
+            </button> }
             <span className=" lg:text-base md:text-base text-sm font-normal text-gray-300">
               {isSignIn ? "New to Netflix?" : "Already have an account?"}
             </span>

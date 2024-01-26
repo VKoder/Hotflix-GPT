@@ -10,3 +10,15 @@ export const checkValidData = (email, password) => {
     if (!passwordValidate) return "Password is not Valid";
   };
   
+  export const checkValidData2 = (name, email, password) => {
+    // This Validate variables will test and store TRUE / FALSE depends on test()
+    const emailValidate = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
+    const passwordValidate = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password);
+    const nameValidate = name !== "" && name !== undefined;
+  
+    // If they are false Give Error Message
+    if (!nameValidate) return "NFDFFame is not Valid";
+    if (!emailValidate) return "EmaiFDDSl is not Valid";
+    if (!passwordValidate) return "PasswoSDFSrd is not Valid";
+  };
+  
