@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import Header from "../components/Header";
 import { checkValidData, checkValidData2 } from "../utils/validate";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
@@ -9,16 +11,51 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
-
+ 
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setnotValid(message);
+    if (message) return;
 
+    //Sign In Code if no error
+    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setnotValid(errorCode + errorMessage)
+      });
   };
+
   const handleSignUp = () => {
-  const message2 = checkValidData2(name.current.value, email.current.value, password.current.value)
-  setnotValid(message2)
-  }
+    const message2 = checkValidData2(
+      name.current.value,
+      email.current.value,
+      password.current.value
+    );
+    setnotValid(message2);
+    if (message2) return;
+
+    //SignUp Code with no error
+    createUserWithEmailAndPassword(
+      auth,
+      email.current.value,
+      password.current.value
+    )
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setnotValid(errorCode + errorMessage)
+      });
+  };
+
   const toggleSignInForm = () => {
     setisSignIn(!isSignIn);
   };
@@ -49,7 +86,7 @@ const Login = () => {
               className="lg:py-3 md:py-3 lg:text-base md:text-base text-sm py-3 bg-zinc-900 bg-opacity-60 text-white border-[1px] border-gray-400 rounded-md md:px-4 px-3 my-3 lg:px-4 w-full"
               type="text"
               placeholder="Email Address"
-              onChange={(e) => e.target.value}
+             
             ></input>
             <input
               ref={password}
@@ -60,17 +97,21 @@ const Login = () => {
             <span className="text-red-700 text-base font-semibold">
               {notValid}
             </span>
-           {isSignIn ? <button
-              className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
-              onClick={handleSignIn}
-            >
-             Sign In
-            </button> : <button
-              className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
-              onClick={handleSignUp}
-            >
-              Sign Up
-            </button> }
+            {isSignIn ? (
+              <button
+                className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
+                onClick={handleSignIn}
+              >
+                Sign In
+              </button>
+            ) : (
+              <button
+                className="w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
+                onClick={handleSignUp}
+              >
+                Sign Up
+              </button>
+            )}
             <span className=" lg:text-base md:text-base text-sm font-normal text-gray-300">
               {isSignIn ? "New to Netflix?" : "Already have an account?"}
             </span>

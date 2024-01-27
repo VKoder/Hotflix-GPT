@@ -8,6 +8,8 @@ export const checkValidData = (email, password) => {
     // if (!nameValidate) return "Name is not Valid";
     if (!emailValidate) return "Email is not Valid";
     if (!passwordValidate) return "Password is not Valid";
+
+    return null;
   };
   
   export const checkValidData2 = (name, email, password) => {
@@ -17,8 +19,11 @@ export const checkValidData = (email, password) => {
     const nameValidate = name !== "" && name !== undefined;
   
     // If they are false Give Error Message
-    if (!nameValidate) return "NFDFFame is not Valid";
-    if (!emailValidate) return "EmaiFDDSl is not Valid";
-    if (!passwordValidate) return "PasswoSDFSrd is not Valid";
+    if (!nameValidate) return "Name is not Valid";
+    if (!emailValidate) return "Email is not Valid";
+    if (!passwordValidate) return "Password is not Valid";
+
+    return null;
+
   };
   

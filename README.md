@@ -1,7 +1,7 @@
 # Hotflix-GPT 
 > A Video Streaming Web App with the powers of `Chat-GPT` in it!  
 
-Currently Working on it Here is the Live Link - <a href="https://hotflix-gpt.vercel.app/">Hotflix-GPT</a>
+Currently Working on it Here is the Live Link - <a href="https://hotflix-gpt.vercel.app/" target="_blank">Hotflix-GPT</a>
 Feel free to Contribute in this project
 
 
