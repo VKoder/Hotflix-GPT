@@ -26,7 +26,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setnotValid(errorCode + errorMessage)
+        setnotValid("Incorrect Password")
       });
   };
 
