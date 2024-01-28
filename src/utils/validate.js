@@ -21,7 +21,7 @@ export const checkValidData = (email, password) => {
     // If they are false Give Error Message
     if (!nameValidate) return "Name is not Valid";
     if (!emailValidate) return "Email is not Valid";
-    if (!passwordValidate) return "Password is not Valid";
+    if (!passwordValidate) return "Password must contain 6 digits one symbol, one capital letter";
 
     return null;
 

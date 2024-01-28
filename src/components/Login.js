@@ -1,32 +1,46 @@
 import { useState, useRef } from "react";
 import Header from "../components/Header";
 import { checkValidData, checkValidData2 } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/userSlice";
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
   const [notValid, setnotValid] = useState(null);
-
+  const navigate = useNavigate();
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
- 
+
+  const dispatch = useDispatch()
+
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setnotValid(message);
     if (message) return;
 
     //Sign In Code if no error
-    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+    signInWithEmailAndPassword(
+      auth,
+      email.current.value,
+      password.current.value
+    )
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        navigate("/browse");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setnotValid("Incorrect Password")
+        setnotValid("Incorrect Password");
       });
   };
 
@@ -47,12 +61,25 @@ const Login = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        updateProfile(user, {
+          displayName: name.current.value,
+        })
+          .then(() => {
+            const { uid, email, displayName } = auth;
+                dispatch(
+                  addUser({ uid: uid, email: email, displayName: displayName })
+                );
+          })
+          .catch((error) => {
+            setnotValid(error.message);
+          });
+
+        navigate("/browse");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setnotValid(errorCode + errorMessage)
+        setnotValid(errorCode + errorMessage);
       });
   };
 
@@ -86,7 +113,6 @@ const Login = () => {
               className="lg:py-3 md:py-3 lg:text-base md:text-base text-sm py-3 bg-zinc-900 bg-opacity-60 text-white border-[1px] border-gray-400 rounded-md md:px-4 px-3 my-3 lg:px-4 w-full"
               type="text"
               placeholder="Email Address"
-             
             ></input>
             <input
               ref={password}

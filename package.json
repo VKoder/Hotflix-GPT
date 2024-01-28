@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "tailwindcss": "^3.4.1"
   }
