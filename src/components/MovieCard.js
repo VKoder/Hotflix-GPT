@@ -2,7 +2,7 @@ import { IMG_LINK } from "../utils/constants";
 const MovieCard =({poster}) => {
     
     return (
-        <div className="lg:w-[160px] md:w-[120px] sm:w-[100px] w-[80px] ">
+        <div className="lg:w-[160px] md:w-[130px] sm:w-[120px] w-[100px] ">
             <img className="w-full rounded-sm" src={IMG_LINK + poster} alt="Card"></img>
         </div>
     )
