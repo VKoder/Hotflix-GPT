@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <div className="absolute w-full z-50 flex justify-between overflow-hidden items-center lg:px-20 md:px-16 px-6">
       <img
-        className="lg:w-60 sm:w-48 w-28 md:w-52  md:py-6 py-4 lg:py-6"
+        className="lg:w-48 sm:w-28 w-20 md:w-40  md:py-6 py-4 lg:py-6"
         src={Logo}
         alt="logo"
       ></img>
