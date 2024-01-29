@@ -7,7 +7,9 @@ function App() {
   return (
     <>
     <Provider store={appStore}>
+      {/* <div className="overflow-hidden"> */}
       <Body/>
+      {/* </div> */}
     </Provider>
     </>
   );
