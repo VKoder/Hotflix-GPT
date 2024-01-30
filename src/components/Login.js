@@ -7,9 +7,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../store/userSlice";
 import { BACK_IMG } from "../utils/constants";
+import lang from "../utils/langConstants";
+
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
@@ -19,6 +21,7 @@ const Login = () => {
   const name = useRef(null);
   const dispatch = useDispatch();
 
+  const langKey = useSelector(store => store.configApp.lang)
 
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
@@ -96,7 +99,7 @@ const Login = () => {
         >
           <div className="w-10/12">
             <h1 className="text-white lg:text-4xl text-3xl md:text-4xl font-bold md:my-4 my-3 lg:my-4">
-              {isSignIn ? "Sign In" : "Sign Up"}
+              {isSignIn ? lang[langKey].signIn : lang[langKey].signUp}
             </h1>
 
             {!isSignIn && (
@@ -104,20 +107,20 @@ const Login = () => {
                 ref={name}
                 className={inputCss}
                 type="text"
-                placeholder="Full Name"
+                placeholder={lang[langKey].name}
               ></input>
             )}
             <input
               ref={email}
               className={inputCss}
               type="text"
-              placeholder="Email Address"
+              placeholder={lang[langKey].email}
             ></input>
             <input
               ref={password}
               className={inputCss}
               type="password"
-              placeholder="Password"
+              placeholder={lang[langKey].password}
             ></input>
             <span className="text-red-700 text-base font-semibold">
               {notValid}
@@ -127,24 +130,25 @@ const Login = () => {
                 className={buttonCss}
                 onClick={handleSignIn}
               >
-                Sign In
+                {lang[langKey].signIn}
               </button>
             ) : (
               <button
               className={buttonCss}
                 onClick={handleSignUp}
               >
-                Sign Up
+                {lang[langKey].signUp}
               </button>
             )}
             <span className=" lg:text-base md:text-base text-sm font-normal text-gray-300">
-              {isSignIn ? "New to Netflix?" : "Already have an account?"}
+              {isSignIn ? lang[langKey].newToNetflix : lang[langKey].alreadyAcc}
+
             </span>
             <span
               className="font-semibold lg:text-base md:text-base text-sm  text-gray-50 px-1.5 cursor-pointer"
               onClick={toggleSignInForm}
             >
-              {isSignIn ? "Sign Up Now" : "Sign In"}
+              {isSignIn ? lang[langKey].signUp : lang[langKey].signIn}
             </span>
           </div>
         </form>

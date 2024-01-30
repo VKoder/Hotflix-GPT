@@ -5,10 +5,6 @@ const VideoBackground = ({ movieid }) => {
   useMovieTrailer(movieid);
   const trailer = useSelector((store) => store.movie?.nowtrailer);
 
-
-
-  console.log(movieid)
-
   return (
     <div className="w-screen overflow-hidden">
       <div className="">

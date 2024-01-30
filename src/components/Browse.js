@@ -13,9 +13,9 @@ const Browse = () => {
   return (
     <div className="bg-black text-white w-screen">
       <Header />
-      <MainContainer/>
-      
-      <SecondaryContainer/>
+      <MainContainer />
+
+      <SecondaryContainer />
     </div>
   );
 };
