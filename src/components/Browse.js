@@ -11,7 +11,7 @@ const Browse = () => {
   useTopRatedMovies();
 
   return (
-    <div className="bg-black text-white w-screen">
+    <div className="bg-black w-screen">
       <Header />
       <MainContainer />
 
