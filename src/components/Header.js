@@ -63,7 +63,7 @@ const Header = () => {
             {gptview ? (
               <>
                 <button
-                  className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-2"
+                  className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-1.5"
                   onClick={toggleGPTSearchView}
                 >
                   <i class="ri-search-2-line pr-1"></i>
@@ -79,7 +79,7 @@ const Header = () => {
             ) : (
               <>
                 <button
-                  className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-2"
+                  className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-1.5"
                   onClick={toggleGPTSearchView}
                 >
                   <i class="ri-search-2-line pr-1"></i>
@@ -94,7 +94,7 @@ const Header = () => {
               </>
             )}
             <button
-              className="text-white hidden md:block lg:text-base md:text-base font-normal hover:opacity-80 py-1 px-2 rounded-md mr-2 bg-zinc-700"
+              className="text-white hidden md:block lg:text-base md:text-base font-normal hover:opacity-80 py-1 px-1 rounded-md mr-1.5 bg-zinc-700"
               onClick={handleSignOut}
             >
               <i class="ri-logout-box-r-line pr-0.5 lg:pr-1"></i>
