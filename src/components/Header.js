@@ -47,17 +47,17 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-full z-50 flex justify-between overflow-hidden items-center lg:px-20 md:px-16 px-0">
+    <div className="bg-gradient-to-b from-black absolute w-full z-50 flex justify-between overflow-hidden items-center lg:px-10 md:px-10 sm:px-8 px-4">
       <img
-        className="lg:w-48 sm:w-28 w-20 md:w-40  md:py-6 py-4 lg:py-6"
+        className="lg:w-48 sm:w-28 w-20 md:w-40   md:py-6 py-4 lg:py-6"
         src={Logo}
         alt="logo"
       ></img>
 
-      <div className="flex justify-center items-center flex-row lg:gap-2 gap-0.5 sm:gap-1">
+      <div className="flex flex-row justify-center items-center">
         {user && (
-          <div className="">
-            <span className="text-white pr-2 font-normal text-base md:font-semibold md:text-lg lg:font-semibold lg:text-lg">
+          <div className="flex justify-center items-center flex-row lg:gap-2 gap-0.5 sm:gap-1">
+            <span className="text-white pr-2 font-normal text-xs md:font-semibold md:text-lg lg:font-semibold lg:text-lg">
               {lang[langKey].welcome}
               {user.displayName}
             </span>
@@ -94,8 +94,9 @@ const Header = () => {
                 </button>
               </>
             )}
+           
             <button
-              className="text-white hidden md:block lg:text-base md:text-base font-normal hover:opacity-80 py-1 px-1 rounded-md mr-1.5 bg-zinc-700"
+              className="text-white hidden md:block lg:text-base md:text-base font-normal hover:opacity-80 py-1 px-1 rounded-md mr-2.5 bg-zinc-700"
               onClick={handleSignOut}
             >
               <i class="ri-logout-box-r-line pr-0.5 lg:pr-1"></i>
@@ -107,10 +108,10 @@ const Header = () => {
             >
               <i class="ri-logout-box-r-line pr-0.5 lg:pr-1"></i>
             </button>
-          </div>
+            </div>
         )}
         <select
-          className="bg-gray-300 border cursor-pointer border-black sm:px-1.5 sm:py-1 px-0.5 py-0.5 lg:px-2 lg:py-1 md:px-2 md:py-1 rounded-md"
+          className="bg-gray-300 text-black border cursor-pointer border-black sm:px-1.5 sm:py-1 px-0.5 py-0.5 lg:px-2 lg:py-1 md:px-2 md:py-1 rounded-md"
           onChange={handlelang}
         >
           {MULTI_LANG.map((option) => (
