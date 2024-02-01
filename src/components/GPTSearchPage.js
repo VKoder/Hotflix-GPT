@@ -1,4 +1,5 @@
 import { BACK_IMG } from "../utils/constants";
+import GPTResult from "./GPTResult";
 import GPTSearch from "./GPTSearch";
 
 const GPTSearchPage = () => {
@@ -6,6 +7,9 @@ const GPTSearchPage = () => {
     <div className="flex justify-start  items-center flex-col w-12/12 ">
         <div className="absolute pt-40 z-10 w-full h-20">
         <GPTSearch/> 
+        </div>
+        <div className="">
+          <GPTResult/>
         </div>
       <div className="overflow-hidden w-full">
         <img

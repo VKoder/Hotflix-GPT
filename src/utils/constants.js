@@ -6,7 +6,7 @@ export const FETCH_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYjg0NTAxMjQxODM2MzY4NzkxN2RiYjdhNjZjMDA5NSIsInN1YiI6IjY1YjY2ZWJhNjBjNTFkMDE4NGQyNjVhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YzeyuEjNPN5UOKV2E-9df7KbodcuN73Sbk2jv2L5ITg",
+      "Bearer" + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -18,3 +18,6 @@ export const MULTI_LANG = [
   { identifier: "marathi", name: "Marathi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+console.log(process.env.REACT_APP_TMDB_KEY)

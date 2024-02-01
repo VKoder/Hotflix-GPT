@@ -12,6 +12,7 @@ import { addGptToggle } from "../store/gptSlice";
 
 const Header = () => {
   const gptview = useSelector((store) => store.gpt.gptSearchView);
+  
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
