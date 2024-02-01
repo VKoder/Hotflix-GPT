@@ -20,4 +20,4 @@ export const MULTI_LANG = [
 ];
 
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
-console.log(process.env.REACT_APP_TMDB_KEY)
+// console.log(process.env.REACT_APP_TMDB_KEY)

@@ -37,7 +37,10 @@ const Header = () => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-        navigate("/browse");
+        if (window.location.pathname === "/") {
+          navigate("/browse");
+        }
+        
       } else {
         dispatch(removeUser());
         navigate("/");
