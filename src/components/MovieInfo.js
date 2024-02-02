@@ -28,7 +28,7 @@ const MovieInfo = () => {
         ></img>
       </div>
     <MovieInfoTop info={info}/>
-    <MovieMid id={info?.id}/>
+    <MovieMid id={info?.id} info={info}/>
     </div>
   );
 };

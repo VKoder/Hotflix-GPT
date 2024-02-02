@@ -11,7 +11,7 @@ const GPTSearch = () => {
    
     
     const movieSearch =async  (movie) => {
-        const data = await fetch('https://api.themoviedb.org/3/search/movie?query='+ movie +'&include_adult=false&language=en-US&page=1', FETCH_OPTIONS)
+        const data = await fetch('https://api.themoviedb.org/3/search/movie?query='+ movie +'&include_adult=false', FETCH_OPTIONS)
         const json = await data.json()
         return json;
     }

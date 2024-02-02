@@ -14,7 +14,7 @@ const useCast = (id) => {
     );
 
     const json = await data.json();
-    console.log(json)
+
     dispatch(addCast(json));
   };
 

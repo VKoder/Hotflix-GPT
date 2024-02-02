@@ -40,8 +40,11 @@ const moviesSlice = createSlice({
         //add data of movies inside nowPlayingMovies
         state.cast = action.payload;
       },
+      removeCast:(state, action)=>{
+        state.cast = null
+      }
   },
 });
 
 export default moviesSlice.reducer;
-export const { addnowPlayingMovies, addnowtrailer, addPopularMovies, addTopRatedMovies, addUpcomingMovies, addMovieInfo, addCast } = moviesSlice.actions;
+export const { addnowPlayingMovies, addnowtrailer, addPopularMovies, addTopRatedMovies, addUpcomingMovies, addMovieInfo, addCast, removeCast } = moviesSlice.actions;
