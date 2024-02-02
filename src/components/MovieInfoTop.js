@@ -2,7 +2,7 @@ import { IMG_LINK } from "../utils/constants";
 
 const MovieInfoTop =({info}) => {
     return (
-        <div className="flex flex-row justify-between xl:gap-1 gap-3 h-[100vh] w-[100%] items-start xl:pt-28 xl:px-20 pt-10 px-3"  >
+        <div className="flex flex-row justify-between xl:gap-1 gap-3 h-[100vh] w-[100%] items-start xl:pt-28 xl:px-20 pt-[13%] px-3"  >
         <div className="xl:w-3.5/12 w-4/12">
           <img
             className="w-72 rounded-2xl"
