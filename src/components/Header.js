@@ -1,7 +1,7 @@
 import Logo from "../Image/Logo.png";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../store/userSlice";
@@ -51,11 +51,11 @@ const Header = () => {
 
   return (
     <div className="bg-gradient-to-b from-black absolute w-full z-50 flex justify-between overflow-hidden items-center lg:px-10 md:px-10 sm:px-8 px-4">
-      <img
+     <Link to={"/browse"} ><img
         className="lg:w-48 sm:w-28 w-20 md:w-40   md:py-6 py-4 lg:py-6"
         src={Logo}
         alt="logo"
-      ></img>
+      ></img></Link>
 
       <div className="flex flex-row justify-center items-center">
         {user && (
@@ -70,14 +70,14 @@ const Header = () => {
                   className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-1.5"
                   onClick={toggleGPTSearchView}
                 >
-                  <i class="ri-search-2-line pr-1"></i>
+                <i class="ri-home-4-line lg:pr-1 pr-0.5"></i>
                   Home
                 </button>
                 <button
                   className="bg-purple-500 text-sm md:hidden font-normal hover:opacity-80 py-0.5 px-1 rounded-md mr-0.5"
                   onClick={toggleGPTSearchView}
                 >
-                  <i class="ri-search-2-line lg:pr-1 pr-0.5"></i>Home
+                  <i class="ri-home-4-line lg:pr-1 pr-0.5"></i>Home
                 </button>
               </>
             ) : (

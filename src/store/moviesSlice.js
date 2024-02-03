@@ -7,7 +7,6 @@ const moviesSlice = createSlice({
     nowtrailer:null,
     PopularMovies: null,
     TopRatedMovies: null,
-    UpcomingMovies: null,
     movieInfo: null,
     cast: null,
   },
@@ -27,10 +26,6 @@ const moviesSlice = createSlice({
       addTopRatedMovies: (state, action) => {
         //add data of movies inside nowPlayingMovies
         state.TopRatedMovies = action.payload;
-      },
-      addUpcomingMovies: (state, action) => {
-        //add data of movies inside nowPlayingMovies
-        state.UpcomingMovies = action.payload;
       },
       addMovieInfo: (state, action) => {
         //add data of movies inside nowPlayingMovies

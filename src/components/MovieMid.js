@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useCast from "../custom hooks/useCast";
 import { IMG_LINK } from "../utils/constants";
 import { removeCast } from "../store/moviesSlice";
+import { Link } from "react-router-dom";
 
 const MovieMid = ({ id, info }) => {
     const dispatch = useDispatch()
@@ -51,8 +52,14 @@ const MovieMid = ({ id, info }) => {
         </div>
       </div>
 
-      <div className=" w-3/12 flex justify-start flex-col items-start gap-6 text-white">
-        <div className="flex flex-row xl:gap-10 gap-2 flex-wrap">
+      <div className=" w-3/12 flex justify-start flex-col items-start md:gap-6 gap-0.5 text-white">
+        <div className="flex flex-row xl:gap-10 gap-0.5 flex-wrap">
+        <div className="flex justify-evenly md:gap-4 gap-3 lg:gap-5 items-center flex-row flex-wrap">
+                <Link target="_blank" to={"https://www.instagram.com/_vivekkhule_/"}><span className="text-white lg:text-2xl text-xl md:text-2xl"><i class="ri-instagram-line"></i></span></Link>
+                <Link target="_blank" to={"https://github.com/VKoder"}><span className="text-white lg:text-2xl text-xl md:text-2xl"><i class="ri-github-fill"></i></span></Link>
+                <Link target="_blank" to={"https://www.linkedin.com/in/vivek-khule-237682250/"}><span className="text-white lg:text-2xl text-xl md:text-2xl"><i class="ri-linkedin-box-fill"></i></span></Link>
+                <Link target="_blank" to={"https://twitter.com/VivekKhule"}><span className="text-white lg:text-2xl text-xl md:text-2xl"><i class="ri-twitter-x-fill"></i></span></Link>
+                </div>
         <div className="flex flex-col">
           <span className={budgetCss}>Budget: </span>
           <span className={priceCss}>{info?.budget}</span>
@@ -62,7 +69,7 @@ const MovieMid = ({ id, info }) => {
           <span  className={priceCss}>{info?.revenue}</span>
         </div>
         </div>
-        <div className="flex flex-row xl:gap-14 gap-2 flex-wrap">
+        <div className="flex flex-row xl:gap-14 gap-0.5 flex-wrap">
         <div className="flex flex-col">
           <span className={budgetCss}>Status: </span>
           <span  className={priceCss}>{info?.status}</span>
