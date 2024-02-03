@@ -12,7 +12,6 @@ import { addGptToggle } from "../store/gptSlice";
 
 const Header = () => {
   const gptview = useSelector((store) => store.gpt.gptSearchView);
-  
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,7 +39,6 @@ const Header = () => {
         if (window.location.pathname === "/") {
           navigate("/browse");
         }
-        
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -51,11 +49,13 @@ const Header = () => {
 
   return (
     <div className="bg-gradient-to-b from-black absolute w-full z-50 flex justify-between overflow-hidden items-center lg:px-10 md:px-10 sm:px-8 px-4">
-     <Link to={"/browse"} ><img
-        className="lg:w-48 sm:w-28 w-20 md:w-40   md:py-6 py-4 lg:py-6"
-        src={Logo}
-        alt="logo"
-      ></img></Link>
+      <Link to={"/browse"}>
+        <img
+          className="lg:w-48 sm:w-28 w-20 md:w-40   md:py-6 py-4 lg:py-6"
+          src={Logo}
+          alt="logo"
+        ></img>
+      </Link>
 
       <div className="flex flex-row justify-center items-center">
         {user && (
@@ -70,7 +70,7 @@ const Header = () => {
                   className="bg-purple-500 lg:text-base hidden md:block font-normal hover:opacity-80 py-1 px-2 rounded-md mr-1.5"
                   onClick={toggleGPTSearchView}
                 >
-                <i class="ri-home-4-line lg:pr-1 pr-0.5"></i>
+                  <i class="ri-home-4-line lg:pr-1 pr-0.5"></i>
                   Home
                 </button>
                 <button
@@ -97,7 +97,7 @@ const Header = () => {
                 </button>
               </>
             )}
-           
+
             <button
               className="text-white hidden md:block lg:text-base md:text-base font-normal hover:opacity-80 py-1 px-1 rounded-md mr-2.5 bg-zinc-700"
               onClick={handleSignOut}
@@ -111,7 +111,7 @@ const Header = () => {
             >
               <i class="ri-logout-box-r-line pr-0.5 lg:pr-1"></i>
             </button>
-            </div>
+          </div>
         )}
         <select
           className="bg-gray-300 text-black border cursor-pointer border-black sm:px-1.5 sm:py-1 px-0.5 py-0.5 lg:px-2 lg:py-1 md:px-2 md:py-1 rounded-md"

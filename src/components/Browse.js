@@ -13,19 +13,23 @@ const Browse = () => {
   usePopularMovies();
   useTopRatedMovies();
 
-  const gptview = useSelector(store => store.gpt.gptSearchView)
-  const dispatch = useDispatch()
+  const gptview = useSelector((store) => store.gpt.gptSearchView);
+  const dispatch = useDispatch();
   if (!gptview) {
-    dispatch(removegptMovieResult())
+    dispatch(removegptMovieResult());
   }
 
   return (
     <div className="text-white w-screen">
       <Header />
-      {gptview ? <GPTSearchPage/> :
-      <><MainContainer />
-      <SecondaryContainer /></>
-      }
+      {gptview ? (
+        <GPTSearchPage />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

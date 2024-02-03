@@ -6,7 +6,6 @@ const MovieList = ({ title, movie }) => {
   if (!movie) {
     return <ShimmerUI/>
   }
-  // console.log(movie)
   return (
     <div className="lg:py-5 md:py-4 sm:py-3 py-2.5">
       <span className="lg:text-2xl md:text-xl sm:text-base text-base font-semibold md:pl-3 pl-2 lg:pl-4">

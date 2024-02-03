@@ -5,15 +5,14 @@ import { useSelector } from "react-redux";
 import { IMG_LINK } from "../utils/constants";
 import MovieInfoTop from "./MovieInfoTop";
 import MovieMid from "./MovieMid";
+import ShimmerUI from "./ShimmerUI";
 
 const MovieInfo = () => {
   const { id } = useParams();
   useMovieInfo(id);
 
   const info = useSelector((store) => store.movie.movieInfo);
-  if (!info) return console.log("movieInfo is coming");
-
-  console.log(info);
+  if (!info) return <ShimmerUI/>;
 
   //if we want we can access it by using state variable(like return the state var after data storing) but we r using redux store here
 

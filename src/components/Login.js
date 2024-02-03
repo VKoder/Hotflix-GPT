@@ -12,7 +12,6 @@ import { addUser } from "../store/userSlice";
 import { BACK_IMG } from "../utils/constants";
 import lang from "../utils/langConstants";
 
-
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
   const [notValid, setnotValid] = useState(null);
@@ -21,7 +20,7 @@ const Login = () => {
   const name = useRef(null);
   const dispatch = useDispatch();
 
-  const langKey = useSelector(store => store.configApp.lang)
+  const langKey = useSelector((store) => store.configApp.lang);
 
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
@@ -86,8 +85,10 @@ const Login = () => {
   };
 
   //Tailwind Constants
-  const inputCss = "lg:py-3 md:py-3 lg:text-base md:text-base text-sm py-3 bg-zinc-900 bg-opacity-60 text-white border-[1px] border-gray-400 rounded-md md:px-4 px-3 my-3 lg:px-4 w-full"
-  const buttonCss = "w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold"
+  const inputCss =
+    "lg:py-3 md:py-3 lg:text-base md:text-base text-sm py-3 bg-zinc-900 bg-opacity-60 text-white border-[1px] border-gray-400 rounded-md md:px-4 px-3 my-3 lg:px-4 w-full";
+  const buttonCss =
+    "w-full bg-red-700 py-2 text-white rounded-md my-3 font-semibold";
 
   return (
     <div className="relative w-12/12">
@@ -126,23 +127,16 @@ const Login = () => {
               {notValid}
             </span>
             {isSignIn ? (
-              <button
-                className={buttonCss}
-                onClick={handleSignIn}
-              >
+              <button className={buttonCss} onClick={handleSignIn}>
                 {lang[langKey].signIn}
               </button>
             ) : (
-              <button
-              className={buttonCss}
-                onClick={handleSignUp}
-              >
+              <button className={buttonCss} onClick={handleSignUp}>
                 {lang[langKey].signUp}
               </button>
             )}
             <span className=" lg:text-base md:text-base text-sm font-normal text-gray-300">
               {isSignIn ? lang[langKey].newToNetflix : lang[langKey].alreadyAcc}
-
             </span>
             <span
               className="font-semibold lg:text-base md:text-base text-sm  text-gray-50 px-1.5 cursor-pointer"

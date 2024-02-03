@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import useCast from "../custom hooks/useCast";
 import { IMG_LINK } from "../utils/constants";
-import { removeCast } from "../store/moviesSlice";
 import { Link } from "react-router-dom";
 
 const MovieMid = ({ id, info }) => {
@@ -9,13 +8,8 @@ const MovieMid = ({ id, info }) => {
 
   useCast(id);
   const castInfo = useSelector((store) => store.movie.cast);
-  if (!castInfo) {
-    return console.log("cast info is coming");
-  }
+  if (!castInfo) return
   const { cast, crew } = castInfo;
-
-  console.log(cast);
-  console.log(crew);
 
   const budgetCss = "xl:text-lg lg:text-lg md:text-base sm:text-sm text-sm font-bold"
   const priceCss ="xl:text-base lg:text-base md:text-sm  text-xs xs:text-sm font-normal"
