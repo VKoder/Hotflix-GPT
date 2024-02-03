@@ -4,16 +4,19 @@ import MovieList from "./MovieList";
 const GPTResult = () => {
   const { movieNames, movieResults } = useSelector((store) => store.gpt);
   if (!movieNames && !movieResults) {
-    return console.log("jkjhj");
+   return <h1>Search Anything You Want</h1>
   }
 
   return (
-   
-      <div className="lg:px-8 md:px-8 sm:px-6 px-4 z-20">
-        { movieNames?.map((movieName,index) => <MovieList key={movieName} title={movieName} movie={movieResults?.[index]?.results} />)
-        
-}
-      </div>
+    <div className="xl:px-16 md:px-8 sm:px-4 px-1.5 lg:px-12">
+      {movieNames?.map((movieName, index) => (
+        <MovieList
+          key={movieName}
+          title={movieName}
+          movie={movieResults?.[index]?.results}
+        />
+      ))}
+    </div>
   );
 };
 export default GPTResult;

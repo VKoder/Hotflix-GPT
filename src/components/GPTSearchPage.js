@@ -4,14 +4,14 @@ import GPTSearch from "./GPTSearch";
 
 const GPTSearchPage = () => {
   return (
-    <div className="flex justify-start  items-center flex-col w-12/12 ">
-        <div className="absolute pt-40 z-10 w-full h-20">
+    <div className="flex justify-center relative  items-center flex-col h-full xl:pt-40  lg:pt-40 md:pt-28 sm:pt-24 pt-20 w-screen overflow-hidden ">
+        <div className="z-30 w-full h-20">
         <GPTSearch/> 
         </div>
-        <div className="">
+        <div className="w-11/12">
           <GPTResult/>
         </div>
-      <div className="overflow-hidden w-full">
+      <div className="overflow-hidden fixed -z-10 top-0 left-0 w-full">
         <img
           className=" brightness-[.4] lg:scale-110 md:scale-x-125 sm:scale-x-150  sm:scale-y-110 scale-x-[2] scale-y-100 md:h-[600px] sm:h-[600px] h-screen lg:h-[700px]  w-full"
           alt="background"

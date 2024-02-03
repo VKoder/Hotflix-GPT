@@ -6,10 +6,10 @@ const  valueCSS = "xl:px-4 lg:px-4 md:px-3 sm:px-2 px-2 py-0.5 xl:text-base lg:t
 const MovieInfoTop =({info}) => {   
 
     return (
-        <div className="flex flex-row justify-between xl:gap-1 gap-3 xl:h-[100vh] lg:h-[100vh] md:h-[100vh] sm:h-[100vh] h-[30vh] w-[100%] items-start xl:pt-28 xl:px-20 pt-[15%] px-3"  >
+        <div className="flex flex-row justify-between xl:gap-1 gap-3 xl:h-[100vh] lg:h-[100vh] md:h-[100vh] sm:h-[80vh] xs:h-[50vh] h-[30vh] w-[100%] items-start xl:pt-28 xl:px-20 pt-[15%] px-3"  >
         <div className="xl:w-3.5/12 w-4/12">
           <img
-            className="w-72 rounded-2xl"
+            className="xl:w-72 lg:w-64 md:w-60 sm:w-48 w-28  rounded-2xl"
             src={IMG_LINK + info?.poster_path}
             alt="movieicon"
           ></img>
@@ -27,7 +27,7 @@ const MovieInfoTop =({info}) => {
             </span>
           </div>
 
-          <div className=" xl:pt-7 pt-0 xl:gap-6 gap-0 text-white flex flex-wrap flex-row">
+          <div className=" xl:pt-7 lg:pt-6 md:pt-5 sm:pt-3 pt-0 xl:gap-6 gap-0 text-white flex flex-wrap flex-row">
             <div>
             <span className={dateCSS}>Date:</span>
             <span className={valueCSS}>{info?.release_date}</span>

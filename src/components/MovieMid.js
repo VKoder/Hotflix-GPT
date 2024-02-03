@@ -20,7 +20,7 @@ const MovieMid = ({ id, info }) => {
   const priceCss ="xl:text-base lg:text-base md:text-sm  text-xs xs:text-sm font-normal"
 
   return (
-    <div className="xl:px-10 lg:px-10 md:px-8 sm:px-6 px-4 xl:pt-4 lg:pt-4 md:pt-3 pt-1.5 sm:pt-2  w-12/12 bg-black xl:h-[65vh] h-[30vh]">
+    <div className="xl:px-10 lg:px-10 md:px-8 sm:px-6 px-4 xl:pt-4 lg:py-4 md:py-3 py-1.5 sm:py-2  w-12/12 bg-black">
     <div className="xl:mb-6 lg:mb-5 md:mb-4 sm:mb-3 mb-2">
     <span className="text-white font-bold xl:text-3xl lg:text-3xl text-xl sm:text-xl md:text-2xl"> Cast</span>
   </div>

@@ -20,7 +20,7 @@ const Browse = () => {
   }
 
   return (
-    <div className="bg-black text-white w-screen">
+    <div className="text-white w-screen">
       <Header />
       {gptview ? <GPTSearchPage/> :
       <><MainContainer />
