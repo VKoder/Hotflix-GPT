@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import ShimmerUI from "./ShimmerUI";
 
 const MovieList = ({ title, movie }) => {
   if (!movie) {
-    return console.log("no");
+    return <ShimmerUI/>
   }
   // console.log(movie)
   return (
