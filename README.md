@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://hotflix-gpt-xfgn.vercel.app/static/media/Logo.646a492d5a7f2d9fdf34.png" style="width:220px"></img>
-  <h2><b>🚀Video Streaming Web App with the Superpowers of Chat GPT in it! 🚀</b></h2>
+  <h2><b>🚀Video Streaming Web App with the Superpowers of <img src="https://imgs.search.brave.com/DNLDdYF8mSpI-BNkoddoSVQQIMx6vouGldKR_CsSBzs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9mcmVl/cG5nbG9nby5jb20v/aW1hZ2VzL2FsbF9p/bWcvMTcwMDQwMzI5/MGNoYXRncHQtcG5n/LnBuZw" style="width:30px"></img>Chat GPT in it! 🚀</b></h2>
 </div>
 <br></br>
 <!-- PROJECT DESCRIPTION -->
@@ -43,8 +43,8 @@
 <br></br>
 ## 🚀 Explore HotflixGPT
 
-- Check out the [GitHub Repo](https://lnkd.in/g4ueR8AR)
-- Explore the project [here](https://rb.gy/dc5efq)
+- Check out the [GitHub Repo](https://github.com/VKoder/Hotflix-GPT)
+- Explore the project [here](https://hotflix-gpt-xfgn.vercel.app/)
 
 ---
 <br></br>
