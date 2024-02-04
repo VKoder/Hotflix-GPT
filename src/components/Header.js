@@ -119,6 +119,7 @@ const Header = () => {
         >
           {MULTI_LANG.map((option) => (
             <option
+              key={option.name}
               className="text-black lg:px-2 lg:py-1 md:px-2 :px-1 :py-0.5 sm:px-1.5 sm:py-0.5 md:py-1"
               value={option.identifier}
             >

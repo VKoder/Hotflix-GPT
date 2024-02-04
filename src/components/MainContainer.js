@@ -8,7 +8,7 @@ const MainContainer = () => {
 
   if (!movies) return null; // Return null or some loading indicator while waiting for movies
 
-  const movieInfo = movies[0];
+  const movieInfo = movies[1];
   const { original_title, overview, id } = movieInfo;
 
   return (

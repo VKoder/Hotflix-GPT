@@ -6,6 +6,7 @@ import { IMG_LINK } from "../utils/constants";
 import MovieInfoTop from "./MovieInfoTop";
 import MovieMid from "./MovieMid";
 import ShimmerUI from "./ShimmerUI";
+import MovieBottom from "./MovieBottom";
 
 const MovieInfo = () => {
   const { id } = useParams();
@@ -28,6 +29,7 @@ const MovieInfo = () => {
       </div>
     <MovieInfoTop info={info}/>
     <MovieMid id={info?.id} info={info}/>
+    <MovieBottom id={info?.id}/>
     </div>
   );
 };

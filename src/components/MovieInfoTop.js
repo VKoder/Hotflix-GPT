@@ -34,7 +34,7 @@ const MovieInfoTop = ({ info }) => {
           <div className="">
             <span className={dateCSS}>Genure:</span>
             {info?.genres?.map((gen) => (
-              <span className={valueCSS}>{gen?.name}</span>
+              <span key={gen?.name} className={valueCSS}>{gen?.name}</span>
             ))}
           </div>
           <div>

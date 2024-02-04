@@ -24,8 +24,8 @@ const MovieMid = ({ id, info }) => {
       <div className="w-9/12 py-2">
 
         <div className="overflow-x-scroll overflow-y-hidden no-scrollbar xl:gap-5 lg:gap-5 md:gap-4 sm:gap-3 gap-2  px-4 flex flex-row">
-          {cast?.map((cast) => (
-            <div className="flex justify-between items-center rounded-lg  flex-col bg-zinc-700">
+          {cast?.map((cast) => ( 
+            <div key={cast?.character} className="flex justify-between items-center rounded-lg  flex-col bg-zinc-700">
               <div className="stroke animate 800 xl:h-[190px] lg:h-[180px] md:h-[170px] sm:h-[150px] h-[130px] overflow-hidden  rounded-t-lg xl:w-[170px] md:w-[150px] sm:w-[130px] w-[90px] lg:w-[160px]">
                 <img
                   className="w-full "
